@@ -1,0 +1,201 @@
+/* ==========================================================================
+   CSS Variables (Corporate Style)
+   ========================================================================== */
+   :root {
+    /* Color Palette - Major Contractor Feel */
+    --clr-primary: #0F172A; /* Deep Slate / Navy */
+    --clr-primary-dark: #020617;
+    --clr-secondary: #334155;
+    
+    /* Accents */
+    --clr-accent: #EAB308; /* Industrial Yellow / Gold */
+    --clr-accent-hover: #CA8A04;
+    --clr-accent-light: #FEF08A;
+    
+    --clr-success: #16A34A;
+    --clr-danger: #DC2626;
+    
+    --clr-text-main: #1E293B;
+    --clr-text-light: #475569;
+    --clr-text-muted: #94A3B8;
+    --clr-bg-main: #F8FAFC;
+    --clr-bg-alt: #F1F5F9;
+    --clr-bg-white: #FFFFFF;
+    
+    /* Typography */
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease-in-out;
+    --transition-normal: 0.3s ease-in-out;
+    
+    /* Shadow */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Layout */
+    --max-width: 1280px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--clr-text-main);
+    background-color: var(--clr-bg-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-fast);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--clr-primary);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--clr-text-light);
+}
+
+.text-accent { color: var(--clr-accent); }
+.text-white { color: #fff !important; }
+.text-center { text-align: center; }
+
+/* Layout Helpers */
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section {
+    padding: 6rem 0;
+}
+
+.bg-light { background-color: var(--clr-bg-alt); }
+.bg-white { background-color: var(--clr-bg-white); }
+.bg-dark { background-color: var(--clr-primary); color: white; }
+
+.section-subtitle {
+    display: block;
+    color: var(--clr-accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 2px; /* Square edges for corporate feel */
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--clr-accent);
+    color: var(--clr-primary-dark);
+}
+
+.btn-primary:hover {
+    background-color: var(--clr-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--clr-accent);
+    color: var(--clr-accent);
+}
+
+.btn-outline:hover {
+    background-color: var(--clr-accent);
+    color: var(--clr-primary-dark);
+}
+
+/* Page Hero Header (For inner pages) */
+.page-header {
+    background-color: var(--clr-primary);
+    color: white;
+    padding: 8rem 0 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(90deg, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.7) 100%);
+    z-index: 1;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-header h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    color: var(--clr-text-muted);
+    font-size: 1.125rem;
+    max-width: 600px;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
