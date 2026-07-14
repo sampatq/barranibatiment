@@ -16,10 +16,10 @@ const Documents = () => {
             <div className="expertise-card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
               <FileText color="var(--clr-primary)" size={48} style={{ marginBottom: '1.5rem' }} />
               <h3 style={{ marginBottom: '1rem' }}>Profil de l'Entreprise</h3>
-              <p style={{ flexGrow: 1 }}>Présentation complète, portfolio des projets et chiffres clés de BARRANI Bâtiment (PDF).</p>
-              <button className="btn btn-outline" style={{ marginTop: '1.5rem', width: '100%' }}>
-                <Download size={18} /> Télécharger
-              </button>
+              <p style={{ flexGrow: 1 }}>Présentation complète, portfolio des projets et chiffres clés de BARRANI Bâtiment (PowerPoint).</p>
+              <a href="/portfolio.pptx" download="Société BARRANI Bâtiment - Portfolio Overview.pptx" className="btn btn-outline" style={{ marginTop: '1.5rem', width: '100%', textDecoration: 'none' }}>
+                <Download size={18} style={{ marginRight: '0.5rem' }} /> Télécharger
+              </a>
             </div>
 
             <div className="expertise-card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
